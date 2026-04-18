@@ -1,2 +1,121 @@
 
-[audits]
+[[audits.anstyle-query]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+version = "1.1.4"
+notes = """
+Queries env vars for color mode settings/availability, and the
+only unsafe usage is for windows where it modifies the console mode.
+"""
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/null-webhook/main/supply-chain/audits.toml"
+
+[[audits.anstyle-wincon]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+version = "3.0.10"
+notes = """
+Only unsafe is for windows, to get/set console attributes.
+For non-windows, this is a passthru to another crate.
+"""
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/null-webhook/main/supply-chain/audits.toml"
+
+[[audits.cfg-if]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "1.0.0 -> 1.0.3"
+notes = """
+No unsafe ambient capabilities seen, the crate is entirely a macro that selects
+branches of the caller's input code. (seems low risk)
+"""
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/null-webhook/main/supply-chain/audits.toml"
+
+[[audits.cfg_aliases]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+version = "0.1.1"
+notes = """
+No unsafe, reads cargo environment variables to determine which features to
+enable in the user's build.rs
+"""
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/null-webhook/main/supply-chain/audits.toml"
+
+[[audits.clap_lex]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+version = "0.7.5"
+notes = """
+String manipulation only. The unsafe usage appears to match std safety obligations,
+feeding bytes where the UTF-8 boundary condition is satisfied by the source docs.
+"""
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/null-webhook/main/supply-chain/audits.toml"
+
+[[audits.colorchoice]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+version = "1.0.4"
+notes = "No unsafe, just an enum <--> usize with a static getter/setter"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/null-webhook/main/supply-chain/audits.toml"
+
+[[audits.heck]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.4.1 -> 0.5.0"
+notes = """
+Only significant delta is removing `unicode_segmentation` optional dependency,
+still has crate-wide `#![forbid(unsafe_code)]` and no added ambient capabilities.
+"""
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/null-webhook/main/supply-chain/audits.toml"
+
+[[audits.indenter]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+version = "0.3.4"
+notes = "No unsafe, only string formatting"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/null-webhook/main/supply-chain/audits.toml"
+
+[[audits.is_terminal_polyfill]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+version = "1.70.1"
+notes = "Literally a trait wrapping calls to std::io::IsTerminal::is_terminal, no unsafe"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/null-webhook/main/supply-chain/audits.toml"
+
+[[audits.once_cell_polyfill]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+version = "1.70.1"
+notes = "No unsafe, polyfill wrapper for std::sync::OnceLock"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/null-webhook/main/supply-chain/audits.toml"
+
+[[audits.proc-macro2]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "1.0.94 -> 1.0.101"
+notes = """
+Ambient capabilities probing for rustc features is modified but appears
+functionally the same.  No changes in unsafe noted, only unsafe is for
+unchecked from str and TokenStream::take_inner which changes into RcVec.
+"""
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/null-webhook/main/supply-chain/audits.toml"
+
+[[audits.sd-notify]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+version = "0.5.0"
+notes = """
+Two categories of unsafe:
+1. unset_env - obligations forwarded to caller as unsafe functions
+2. libc socket / file descriptor interaction required for connecting to systemd
+"""
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/null-webhook/main/supply-chain/audits.toml"
+
+[[audits.sd-notify]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+violation = "^0.4.5"
+notes = """
+Somewhat dubious use of unset_env, which is handled better in the next 0.5.0 version.
+Unsafe is required for libc and interacting with the systemd sockets and file
+descriptor settings.
+"""
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/null-webhook/main/supply-chain/audits.toml"
