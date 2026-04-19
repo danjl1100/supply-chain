@@ -42,6 +42,13 @@ For non-windows, this is a passthru to another crate.
 """
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/null-webhook/main/supply-chain/audits.toml"
 
+[[audits.bstr]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "1.12.1 -> 1.12.0"
+notes = "Docs change and inconsequential lifetime annotation"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/soundbox-iii/supply-chain/audits.toml"
+
 [[audits.cfg-if]]
 who = "Daniel Lambert <danjl1100@gmail.com>"
 criteria = "safe-to-deploy"
@@ -132,6 +139,13 @@ Only significant delta is removing `unicode_segmentation` optional dependency,
 still has crate-wide `#![forbid(unsafe_code)]` and no added ambient capabilities.
 """
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/null-webhook/main/supply-chain/audits.toml"
+
+[[audits.idna]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.3.0 -> 0.4.0"
+notes = "Clippy-style updates, and reworking features for std/core"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/soundbox-iii/supply-chain/audits.toml"
 
 [[audits.indenter]]
 who = "Daniel Lambert <danjl1100@gmail.com>"
@@ -232,12 +246,26 @@ delta = "2.2.0 -> 2.2.1"
 notes = "No unsafe present at all. Delta only adds one early return case, small."
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/null-webhook/main/supply-chain/audits.toml"
 
+[[audits.version_check]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.9.4 -> 0.9.5"
+notes = "Docs-only change"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/soundbox-iii/supply-chain/audits.toml"
+
 [[audits.windows-link]]
 who = "Daniel Lambert <danjl1100@gmail.com>"
 criteria = "safe-to-deploy"
 delta = "0.1.1 -> 0.1.3"
 notes = "Only lints changed"
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/zpool-status-exporter/main/supply-chain/audits.toml"
+
+[[trusted.libc]]
+criteria = "safe-to-deploy"
+user-id = 55123
+start = "2024-08-15"
+end = "2027-04-19"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/soundbox-iii/supply-chain/audits.toml"
 
 [[trusted.libc]]
 criteria = "safe-to-deploy"
