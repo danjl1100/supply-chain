@@ -1,4 +1,14 @@
 
+[[audits.anstyle]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+version = "1.0.11"
+notes = """
+Only usage of unsafe is `from_utf8_unchecked` with small scope and safety comment.
+No ambient capabilities seen.
+"""
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/zpool-status-exporter/main/supply-chain/audits.toml"
+
 [[audits.anstyle-parse]]
 who = "Daniel Lambert <danjl1100@gmail.com>"
 criteria = "safe-to-deploy"
@@ -85,6 +95,16 @@ criteria = "safe-to-deploy"
 version = "1.0.4"
 notes = "No unsafe, just an enum <--> usize with a static getter/setter"
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/null-webhook/main/supply-chain/audits.toml"
+
+[[audits.console]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.15.7 -> 0.15.11"
+notes = """
+Reworks some unsafe usage to use `as_raw_fd` (seems nicer), and windows
+removes some UB cases if OS calls return out of bounds lengths
+"""
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/zpool-status-exporter/main/supply-chain/audits.toml"
 
 [[audits.ctrlc]]
 who = "Daniel Lambert <danjl1100@gmail.com>"
