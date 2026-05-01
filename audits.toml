@@ -140,11 +140,25 @@ still has crate-wide `#![forbid(unsafe_code)]` and no added ambient capabilities
 """
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/null-webhook/main/supply-chain/audits.toml"
 
+[[audits.humantime]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+version = "2.3.0"
+notes = "Forbids unsafe, did not see any ambient capabilities used"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/soundbox-iii/supply-chain/audits.toml"
+
 [[audits.idna]]
 who = "Daniel Lambert <danjl1100@gmail.com>"
 criteria = "safe-to-deploy"
 delta = "0.3.0 -> 0.4.0"
 notes = "Clippy-style updates, and reworking features for std/core"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/soundbox-iii/supply-chain/audits.toml"
+
+[[audits.idna_adapter]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "1.2.0 -> 1.0.0"
+notes = "No unsafe, and `#![no_std]`"
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/soundbox-iii/supply-chain/audits.toml"
 
 [[audits.indenter]]
@@ -199,6 +213,16 @@ version = "1.70.1"
 notes = "No unsafe, polyfill wrapper for std::sync::OnceLock"
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/null-webhook/main/supply-chain/audits.toml"
 
+[[audits.pathdiff]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+version = "0.2.3"
+notes = """
+No unsafe, direct port of [cited std source] with `camino` optional duplication
+[cited std source]: https://github.com/rust-lang/rust/blob/e1d0de82cc40b666b88d4a6d2c9dcbc81d7ed27f/src/librustc_back/rpath.rs#L116-L158
+"""
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/soundbox-iii/supply-chain/audits.toml"
+
 [[audits.proc-macro2]]
 who = "Daniel Lambert <danjl1100@gmail.com>"
 criteria = "safe-to-deploy"
@@ -245,6 +269,20 @@ criteria = "safe-to-deploy"
 delta = "2.2.0 -> 2.2.1"
 notes = "No unsafe present at all. Delta only adds one early return case, small."
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/null-webhook/main/supply-chain/audits.toml"
+
+[[audits.thiserror]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "2.0.16 -> 2.0.18"
+notes = "No changes to unsafe, no ambient capabilities used. Generated code does not appear to substantially change."
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/soundbox-iii/supply-chain/audits.toml"
+
+[[audits.thiserror-impl]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "2.0.16 -> 2.0.18"
+notes = "No unsafe changes, only changing clippy allows generated and identifier for `__private`"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/soundbox-iii/supply-chain/audits.toml"
 
 [[audits.version_check]]
 who = "Daniel Lambert <danjl1100@gmail.com>"
