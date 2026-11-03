@@ -1,4 +1,11 @@
 
+[[audits.anstream]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.6.21 -> 1.0.0"
+notes = "Version bump only"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
 [[audits.anstyle]]
 who = "Daniel Lambert <danjl1100@gmail.com>"
 criteria = "safe-to-deploy"
@@ -8,6 +15,13 @@ Only usage of unsafe is `from_utf8_unchecked` with small scope and safety commen
 No ambient capabilities seen.
 """
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/zpool-status-exporter/main/supply-chain/audits.toml"
+
+[[audits.anstyle]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "1.0.13 -> 1.0.14"
+notes = "Only bump dev deps and fix comments"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
 
 [[audits.anstyle-parse]]
 who = "Daniel Lambert <danjl1100@gmail.com>"
@@ -101,6 +115,13 @@ branches of the caller's input code. (seems low risk)
 """
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/null-webhook/main/supply-chain/audits.toml"
 
+[[audits.cfg-if]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "1.0.4 -> 1.0.5"
+notes = "Documented as no-further-updates due to inclusion in rustc"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
 [[audits.cfg_aliases]]
 who = "Daniel Lambert <danjl1100@gmail.com>"
 criteria = "safe-to-deploy"
@@ -169,6 +190,13 @@ delta = "0.15.11 -> 0.16.3"
 notes = '''Only adds true colors and other non-relevant changes. Noted a panic path added (PR \#287), but it's still safe to run.'''
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/feature/beet-pusher-web/supply-chain/audits.toml"
 
+[[audits.console]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-run"
+delta = "0.16.3 -> 0.16.6"
+notes = "Cursory look, change to unsafe is calling style only"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
 [[audits.crc32fast]]
 who = "Daniel Lambert <danjl1100@gmail.com>"
 criteria = "safe-to-deploy"
@@ -214,12 +242,26 @@ version = "0.20.11"
 notes = "Tiny stub for proc macro derives (no unsafe, no capabilities to speak of)"
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/feature/beet-pusher-web/supply-chain/audits.toml"
 
+[[audits.displaydoc]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.2.5 -> 0.2.7"
+notes = "No unsafe or ambient capabilities usage seen"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
 [[audits.dotenvy]]
 who = "Daniel Lambert <danjl1100@gmail.com>"
 criteria = "safe-to-deploy"
 version = "0.15.7"
 notes = "Cursory look, no unsafe but calls `std::env::set_var` with no safety comments to the caller. Also reads files, for the .env file loading"
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/feature/beet-pusher-web/supply-chain/audits.toml"
+
+[[audits.equivalent]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "1.0.2 -> 1.0.3"
+notes = "Update docs guarantees"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
 
 [[audits.errno]]
 who = "Daniel Lambert <danjl1100@gmail.com>"
@@ -262,6 +304,13 @@ criteria = "safe-to-deploy"
 delta = "2.3.0 -> 2.4.1"
 notes = "No unsafe in diff, only tweaks to rand generation algorithms"
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/feature/beet-pusher-web/supply-chain/audits.toml"
+
+[[audits.fastrand]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "2.4.1 -> 2.5.0"
+notes = "Bump to dependency, added benches"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
 
 [[audits.flate2]]
 who = "Daniel Lambert <danjl1100@gmail.com>"
@@ -307,6 +356,13 @@ With only a surface-level understanding, no ambient capabilities found. Asked an
 My "review" basically serves as a cargo-vet exemption, to enable future diff reviews. Other orgs seem to blanket trust the author, but I'm looking forward to reviewing deltas from here.
 """
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/feature/beet-pusher-web/supply-chain/audits.toml"
+
+[[audits.gix-trace]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.1.18 -> 0.1.21"
+notes = "Bump crate edition, no major changes seen"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
 
 [[audits.heck]]
 who = "Daniel Lambert <danjl1100@gmail.com>"
@@ -409,6 +465,13 @@ aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/featu
 [[audits.insta]]
 who = "Daniel Lambert <danjl1100@gmail.com>"
 criteria = "safe-to-run"
+delta = "1.46.3 -> 1.49.0"
+notes = "No changes seen affecting surprising consequences"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[audits.insta]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-run"
 delta = "1.47.2 -> 1.48.0"
 notes = "No unsafe change, only YAML capabilities and ANSI removal"
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/feature/beet-pusher-web/supply-chain/audits.toml"
@@ -419,6 +482,27 @@ criteria = "safe-to-deploy"
 version = "1.70.1"
 notes = "Literally a trait wrapping calls to std::io::IsTerminal::is_terminal, no unsafe"
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/null-webhook/main/supply-chain/audits.toml"
+
+[[audits.jiff]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.2.23 -> 0.2.38"
+notes = "Changes in unsafe appear fine, surface level look"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[audits.jiff-core]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+version = "0.1.1"
+notes = "One unsafe usage in array string as_str appears sound"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[audits.jiff-static]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.2.23 -> 0.2.38"
+notes = "Change to unsafe appears to be a no-op (as explained)"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
 
 [[audits.jiff-tzdb]]
 who = "Daniel Lambert <danjl1100@gmail.com>"
@@ -906,6 +990,13 @@ delta = "0.7.13 -> 1.0.3"
 notes = "Removed some unsafe, and remaining unsafe diff looks reasonable"
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/feature/beet-pusher-web/supply-chain/audits.toml"
 
+[[audits.yoke-derive]]
+who = "Daniel Lambert <danjl1100@gmail.com>"
+criteria = "safe-to-deploy"
+delta = "0.8.0 -> 0.8.1"
+notes = "Clippy annotation update only, no functional change"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
 [[audits.zip]]
 who = "Daniel Lambert <danjl1100@gmail.com>"
 criteria = "safe-to-deploy"
@@ -934,12 +1025,82 @@ version = "0.8.3"
 notes = "Unsafe usage in hash.rs appears OK at a quick cursory glance, no ambient capabilities (main.rs reads files passed as arguments, which makes sense)"
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/feature/beet-pusher-web/supply-chain/audits.toml"
 
+[[trusted.aho-corasick]]
+criteria = "safe-to-deploy"
+user-id = 189
+start = "2019-03-28"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.anstream]]
+criteria = "safe-to-deploy"
+user-id = 6743
+start = "2023-03-16"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.anstyle]]
+criteria = "safe-to-deploy"
+user-id = 6743
+start = "2022-05-18"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.anstyle-parse]]
+criteria = "safe-to-deploy"
+user-id = 6743
+start = "2023-03-08"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.anstyle-query]]
+criteria = "safe-to-deploy"
+user-id = 6743
+start = "2023-04-13"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.anstyle-wincon]]
+criteria = "safe-to-deploy"
+user-id = 6743
+start = "2023-03-08"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
 [[trusted.axum]]
 criteria = "safe-to-deploy"
 user-id = 6741
 start = "2026-04-14"
 end = "2027-05-25"
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/feature/beet-pusher-web/supply-chain/audits.toml"
+
+[[trusted.bstr]]
+criteria = "safe-to-deploy"
+user-id = 189
+start = "2019-04-02"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.clap_builder]]
+criteria = "safe-to-deploy"
+user-id = 6743
+start = "2023-03-28"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.clap_lex]]
+criteria = "safe-to-deploy"
+user-id = 6743
+start = "2022-04-15"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.colorchoice]]
+criteria = "safe-to-deploy"
+user-id = 6743
+start = "2023-04-13"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
 
 [[trusted.hyper]]
 criteria = "safe-to-deploy"
@@ -954,6 +1115,76 @@ user-id = 359
 start = "2022-01-15"
 end = "2027-05-25"
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/feature/beet-pusher-web/supply-chain/audits.toml"
+
+[[trusted.icu_collections]]
+criteria = "safe-to-deploy"
+user-id = 166196
+start = "2023-01-26"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.icu_locale_core]]
+criteria = "safe-to-deploy"
+user-id = 166196
+start = "2025-05-07"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.icu_normalizer]]
+criteria = "safe-to-deploy"
+user-id = 166196
+start = "2023-01-26"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.icu_properties]]
+criteria = "safe-to-deploy"
+user-id = 166196
+start = "2023-01-26"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.icu_properties_data]]
+criteria = "safe-to-deploy"
+user-id = 166196
+start = "2023-11-16"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.is_terminal_polyfill]]
+criteria = "safe-to-deploy"
+user-id = 6743
+start = "2024-05-02"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.itoa]]
+criteria = "safe-to-deploy"
+user-id = 3618
+start = "2019-05-02"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.jiff]]
+criteria = "safe-to-deploy"
+user-id = 189
+start = "2024-02-17"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.jiff-static]]
+criteria = "safe-to-deploy"
+user-id = 189
+start = "2025-03-06"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.jiff-tzdb]]
+criteria = "safe-to-deploy"
+user-id = 189
+start = "2024-07-09"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
 
 [[trusted.libc]]
 criteria = "safe-to-deploy"
@@ -976,6 +1207,13 @@ start = "2024-08-15"
 end = "2027-04-19"
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/zpool-status-exporter/main/supply-chain/audits.toml"
 
+[[trusted.libc]]
+criteria = "safe-to-deploy"
+user-id = 55123
+start = "2024-08-15"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
 [[trusted.linux-raw-sys]]
 criteria = "safe-to-run"
 user-id = 6825
@@ -989,6 +1227,13 @@ user-id = 6825
 start = "2021-06-12"
 end = "2027-05-02"
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/soundbox-iii/supply-chain/audits.toml"
+
+[[trusted.memchr]]
+criteria = "safe-to-deploy"
+user-id = 189
+start = "2019-07-07"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
 
 [[trusted.mio]]
 criteria = "safe-to-deploy"
@@ -997,12 +1242,47 @@ start = "2019-12-17"
 end = "2027-05-25"
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/feature/beet-pusher-web/supply-chain/audits.toml"
 
+[[trusted.once_cell_polyfill]]
+criteria = "safe-to-deploy"
+user-id = 6743
+start = "2025-05-22"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.proc-macro2]]
+criteria = "safe-to-deploy"
+user-id = 3618
+start = "2019-04-23"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
 [[trusted.regex]]
 criteria = "safe-to-deploy"
 user-id = 189
 start = "2019-02-27"
 end = "2027-05-26"
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/feature/beet-pusher-web/supply-chain/audits.toml"
+
+[[trusted.regex]]
+criteria = "safe-to-deploy"
+user-id = 189
+start = "2019-02-27"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.regex-automata]]
+criteria = "safe-to-deploy"
+user-id = 189
+start = "2019-02-25"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.regex-syntax]]
+criteria = "safe-to-deploy"
+user-id = 189
+start = "2019-03-30"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
 
 [[trusted.rustix]]
 criteria = "safe-to-run"
@@ -1018,12 +1298,61 @@ start = "2021-10-29"
 end = "2027-05-02"
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/soundbox-iii/supply-chain/audits.toml"
 
+[[trusted.rustversion]]
+criteria = "safe-to-deploy"
+user-id = 3618
+start = "2019-07-08"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.serde]]
+criteria = "safe-to-deploy"
+user-id = 3618
+start = "2019-03-01"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.serde_core]]
+criteria = "safe-to-deploy"
+user-id = 3618
+start = "2025-09-13"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.serde_derive]]
+criteria = "safe-to-deploy"
+user-id = 3618
+start = "2019-03-01"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
 [[trusted.socket2]]
 criteria = "safe-to-deploy"
 user-id = 6025
 start = "2020-09-09"
 end = "2027-05-25"
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/feature/beet-pusher-web/supply-chain/audits.toml"
+
+[[trusted.syn]]
+criteria = "safe-to-deploy"
+user-id = 3618
+start = "2019-03-01"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.thiserror]]
+criteria = "safe-to-deploy"
+user-id = 3618
+start = "2019-10-09"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.thiserror-impl]]
+criteria = "safe-to-deploy"
+user-id = 3618
+start = "2019-10-09"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
 
 [[trusted.tokio]]
 criteria = "safe-to-deploy"
@@ -1038,6 +1367,41 @@ user-id = 359
 start = "2024-09-09"
 end = "2027-05-25"
 aggregated-from = "https://raw.githubusercontent.com/danjl1100/soundbox-ii/feature/beet-pusher-web/supply-chain/audits.toml"
+
+[[trusted.unicode-ident]]
+criteria = "safe-to-deploy"
+user-id = 3618
+start = "2021-10-02"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.winapi-util]]
+criteria = "safe-to-deploy"
+user-id = 189
+start = "2020-01-11"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.winnow]]
+criteria = "safe-to-deploy"
+user-id = 6743
+start = "2023-02-22"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.zerocopy]]
+criteria = "safe-to-deploy"
+user-id = 7178
+start = "2019-02-28"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
+
+[[trusted.zerocopy-derive]]
+criteria = "safe-to-deploy"
+user-id = 7178
+start = "2019-02-28"
+end = "2027-11-02"
+aggregated-from = "https://raw.githubusercontent.com/danjl1100/cycledit/main/supply-chain/audits.toml"
 
 [[trusted.zlib-rs]]
 criteria = "safe-to-deploy"
